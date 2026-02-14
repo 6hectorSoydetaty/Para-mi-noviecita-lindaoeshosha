@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti ❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }body {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff9ecf, #ff4d6d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 25px;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  background: white;
+  color: #ff4d6d;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.08);
+  background: #ffe3ec;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 20px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Feliz 14 de febrero ❤️</h1>
+    <p>
+      Hice esta pequeña página solo para recordarte lo mucho que te amo.
+      Gracias por existir, por hacer mis días más bonitos y por ser tú.
+    </p><button onclick="mostrarMensaje()">Presiona aquí</button>
+
+<div id="mensaje" class="hidden">
+  Eres lo mejor que me ha pasado 💖
+</div>
+
+  </div>  <script>
+    function mostrarMensaje() {
+      document.getElementById('mensaje').classList.remove('hidden');
+    }
+  </script></body>
+</html>
