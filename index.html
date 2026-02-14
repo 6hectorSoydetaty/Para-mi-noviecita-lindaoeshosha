@@ -1,145 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para ti ❤️</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      height: 100vh;
-      background: linear-gradient(135deg, #ff9ecf, #ff4d6d);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      overflow: hidden;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(10px);
-      padding: 40px 30px;
-      border-radius: 25px;
-      max-width: 420px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 1.5s ease;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    button {
-      border: none;
-      background: white;
-      color: #ff4d6d;
-      padding: 12px 20px;
-      font-size: 16px;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
-    }
-
-    button:hover {
-      transform: scale(1.08);
-      background: #ffe3ec;
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 20px;
-      font-size: 18px;
-      animation: fadeIn 1s ease;
-    }
-
-    .heart {
-      position: absolute;
-      color: #fff;
-      font-size: 20px;
-      animation: floatUp linear infinite;
-      opacity: 0.8;
-    }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(100vh) scale(1);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(-10vh) scale(1.5);
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para mi amor 💘</title>
+<style>
+body {
+  margin:0;
+  height:100vh;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family: Arial, sans-serif;
+  overflow:hidden;
+  color:white;
+  text-align:center;
+}
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 40px 30px;
+  border-radius: 25px;
+  max-width: 420px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  z-index:2;
+}
+button {
+  border:none;
+  background:white;
+  color:#ff4d6d;
+  padding:12px 20px;
+  font-size:16px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:bold;
+}
+button:hover {
+  transform: scale(1.08);
+  background:#ffe3ec;
+}
+.heart {
+  position:absolute;
+  color:white;
+  font-size:20px;
+  animation: floatUp linear infinite;
+  opacity:0.8;
+}
+@keyframes floatUp {
+  from {transform:translateY(100vh) scale(1); opacity:1;}
+  to {transform:translateY(-10vh) scale(1.5); opacity:0;}
+}
+</style>
 </head>
 <body>
 
-  <!-- Música Nonsense -->
-  <iframe width="0" height="0"
-    src="https://www.youtube.com/embed/YcSP1ZUf1eQ?autoplay=1&loop=1&playlist=YcSP1ZUf1eQ"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
+<div class="card">
+  <h1>Feliz 14 de febrero ❤️</h1>
+  <button onclick="abrirSorpresa()">Presiona aquí</button>
+</div>
 
-  <div class="card">
-    <h1>Feliz 14 de febrero ❤️</h1>
+<script>
+function crearCorazon() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerText='💖';
+  heart.style.left=Math.random()*100+'vw';
+  heart.style.animationDuration=(4+Math.random()*4)+'s';
+  heart.style.fontSize=(16+Math.random()*24)+'px';
+  document.body.appendChild(heart);
+  setTimeout(()=>{heart.remove();},8000);
+}
+setInterval(crearCorazon,400);
 
-    <button onclick="mostrarMensaje()">Presiona aquí</button>
+function abrirSorpresa() {
+  window.open('sorpresa.html','_blank');
+}
+</script>
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensaje para ti 💘</title>
+<style>
+body {margin:0; height:100vh; display:flex; justify-content:center; align-items:center; background: linear-gradient(135deg, #ff9ecf, #ff4d6d); font-family:Arial,sans-serif; color:white; text-align:center;}
+.card {padding:30px; max-width:500px;}
+p {font-size:18px; line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="card">
+  <p id="mensaje"></p>
+</div>
 
-    <div id="mensaje" class="hidden">
-      Amor desde que llegaste a mi vida todo cambio eres el motivo por el cual sonrio cada dia, y eres mi felicidad entera, me haz hecho sentir algo muy especial sin incluso estar a mi lado, y eso te hace muy especial en mi vida y no puedo esperar a el momento en el que nos conozcamos y sentir tu calidez, tu olor, (que deseguro seria el perfume de SC) tu voz y ver tus ojos que me enamoran cada dia mas y mas.<br><br>
-      Te amo y siempre te amare, espero que nunca lo pongas en duda TE AMOOOOOOOO 💘💘💞
-    </div>
-  </div>
+<!-- Música Nonsense de Spotify -->
+<iframe src="https://open.spotify.com/embed/track/YcSP1ZUf1eQ?utm_source=generator" width="0" height="0" frameborder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
 
-  <script>
-    function mostrarMensaje() {
-      document.getElementById('mensaje').classList.remove('hidden');
-    }
-
-    function crearCorazon() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.innerText = '💖';
-
-      heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
-      heart.style.fontSize = (16 + Math.random() * 24) + 'px';
-
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 8000);
-    }
-
-    setInterval(crearCorazon, 400);
-  </script>
-
+<script>
+const texto = `Amor desde que llegaste a mi vida todo cambio eres el motivo por el cual sonrio cada dia, y eres mi felicidad entera, me haz hecho sentir algo muy especial sin incluso estar a mi lado, y eso te hace muy especial en mi vida y no puedo esperar a el momento en el que nos conozcamos y sentir tu calidez, tu olor, (que deseguro seria el perfume de SC) tu voz y ver tus ojos que me enamoran cada dia mas y mas.\n\nTe amo y siempre te amare, espero que nunca lo pongas en duda TE AMOOOOOOOO 💘💘💞\n\nLo siento, se que es un texto muy cortito pero ya sabes que me cuesta expresarme jeje te amo.`;
+let i=0;
+const mensajeEl=document.getElementById('mensaje');
+function escribirLetra() {
+  if(i<texto.length){
+    mensajeEl.innerHTML += texto.charAt(i);
+    i++;
+    setTimeout(escribirLetra,30);
+  }
+}
+escribirLetra();
+</script>
 </body>
 </html>
